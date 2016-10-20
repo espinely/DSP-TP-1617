@@ -1,0 +1,20 @@
+%Step 1:
+signal=Dirac(10,20)
+title('Dirac function')
+figure;
+stem(signal)
+
+%Step 2>
+signal=Step(10,20)
+figure;
+stem(signal)
+
+%Step 3>
+signal=Ramp(2,10,20)
+figure;
+stem(signal)
+
+%Step 4>
+signal=Geo(2,10,20)
+figure;
+stem(signal)

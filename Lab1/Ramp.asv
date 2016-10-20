@@ -1,0 +1,12 @@
+function x = Ramp(n,a,N)
+    if n>(N-1)
+        disp('n is greater than N!')
+        x=0;
+    else
+        array=zeros(1,N);
+        for i=1:N
+            array(i)=a*;
+        end
+        x=array;
+    end
+end

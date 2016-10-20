@@ -1,0 +1,10 @@
+function x = Step(n,N)
+    if n>(N-1) & n
+        disp('n is greater than N!')
+        x=0;
+    else
+        array=zeros(1,N);
+        array(n:N)=1;
+        x=array;
+    end
+end
