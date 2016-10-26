@@ -68,7 +68,7 @@ stem(y4);
 
 %Impulse response:
 for i=1:N
-	if i!=5 xdirac(i)=0;
+	if i~=5 xdirac(i)=0;
 	else xdirac(i)=1;
 	end
 end
@@ -123,3 +123,23 @@ for i=1:19
 end
 figure;
 stem(yb);
+
+%We can say this is a linear system for the following reasons:
+% 1) The system doesn't take infinite values at infinite time (it
+% stabilizes at 0)
+% 2) The system doesn't go into uncontrollable oscillations
+% 3) It's also invariant because it's equation doesn't include any
+% multiplication by time.
+
+%A non-linear time-variant system could be something like:
+%   y(k) = (x(k)*t + y(k-1))^2
+
+for i=1:19
+    if i>1
+        yc(i)=(xa(i)*i + yc(i-1))^2;
+    else
+        yc(i)=(xa(i)*i)^2;
+    end
+end
+figure;
+stem(yc);
