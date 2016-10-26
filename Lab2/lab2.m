@@ -1,18 +1,20 @@
 clear all;
 close all;
 
-%1:
+%Reminder:
 f=1;
 fs=20;
 t=[0:0.1:1];
 x1=sin(2*pi*f*t);
 plot(x1);
+title('Continuous sine function');
 n=[0:1/fs:1];
 x2=sin(2*pi*(f/fs)*n);
 figure;
 stem(x2);
+title('Discrete sine function');
 
-%2:
+%1:
 N=10;
 for i=1:N
 	if i<4 x(i)=0;
@@ -28,6 +30,7 @@ for i=1:N
 end
 figure;
 stem(y);
+title('Causal system');
 
 %In order to have a casual system, it should depend only in present and past values, such  that:
 
@@ -40,8 +43,9 @@ for i=1:N
 end
 figure;
 stem(y2);
+title('Non-causal system');
 
-%3:
+%2:
 %Primitive operator:
 N=10;
 for i=1:N
@@ -49,6 +53,7 @@ for i=1:N
 end
 figure;
 stem(y3);
+title('Primitive operator');
 
 %The primitive operator is stable as it reaches and remains on a certain value.
 
@@ -64,6 +69,7 @@ for i=1:N
 end
 figure;
 stem(y4);
+title('Non-stable system');
 %The system is not stable as it doesn-t reach a steady-stsate value.
 
 %Impulse response:
@@ -81,6 +87,7 @@ for i=1:N
 end
 figure;
 stem(y5);
+title('Impulse response for non-stable system 1');
 
 %Stability of system 2:
 
@@ -95,6 +102,7 @@ for i=1:N
 end
 figure;
 stem(y6);
+title('Impulse response for non-stable system 2');
 %The system is not stable as it doesn-t reach a steady-stsate value.
 
 %3:
@@ -111,6 +119,7 @@ for i=1:19
 end
 figure;
 stem(ya);
+title('System 3.1 with first set of imputs');
 
 for i=1:19
 	if i>1 && i<19
@@ -123,6 +132,7 @@ for i=1:19
 end
 figure;
 stem(yb);
+title('System 3.1 with second set of imputs');
 
 %We can say this is a linear system for the following reasons:
 % 1) The system doesn't take infinite values at infinite time (it
@@ -143,3 +153,4 @@ for i=1:19
 end
 figure;
 stem(yc);
+title('Example of non-linear time-variant system');
